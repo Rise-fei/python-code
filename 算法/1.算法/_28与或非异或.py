@@ -1,4 +1,26 @@
 """
+基于与运算计算整数的二级制
+
+"""
+a = 12321312
+for i in range(31,0,-1):
+    print(a & (i << i), end="")
+print()
+
+
+"""求一个二进制数中1的个数"""
+ss = 1234
+print(bin(ss))
+
+count = 0
+while ss:
+    ss2 = ss & (~ss + 1)
+    ss = ss ^ ss2
+    count += 1
+print("二进制的个数是：", count)
+
+
+"""
 按位 与运算
 &
 两个位都为1时，结果才为1
