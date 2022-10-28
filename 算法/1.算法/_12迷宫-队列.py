@@ -1,3 +1,17 @@
+"""
+链表构建队列
+
+push    head
+pop     tail
+
+"""
+
+"""
+数组构建队列
+见 12-1
+"""
+
+
 from collections import deque
 maze = [
     [1,1,1,1,1,1,1,1],
