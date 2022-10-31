@@ -36,6 +36,20 @@ def heapify(li, head, tail):
             break
 
 
+def heapify2(li, head, tail):
+    i = head
+    j = 2 * i + 1
+    while j <= tail:
+        if j + 1 <= tail and li[j+1] > li[j]:
+            j = j + 1
+        if li[j] > li[i]:
+            li[i], li[j] = li[j], li[i]
+            i = j
+            j = 2 * i + 1
+        else:
+            break
+
+
 def heap_sort(li):
     n = len(li)
 
@@ -48,11 +62,11 @@ def heap_sort(li):
     # （optimize）方式2： O(n) 等差数列可证！
     # 建堆  ---》 构造为一个最大堆！！
     for i in range((n - 2) // 2, -1, -1):
-        heapify(li, i, n - 1)
+        heapify2(li, i, n - 1)
 
     for i in range(len(li)-1, -1, -1):
         li[i], li[0] = li[0], li[i]
-        heapify(li, 0, i-1)
+        heapify2(li, 0, i-1)
 
 
 if __name__ == '__main__':

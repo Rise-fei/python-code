@@ -1,7 +1,7 @@
 # 归并排序,python内置排序使用
 # 算法复杂度 nlogn
 
-def merge(li,low,mid,high):
+def merge(li, low, mid, high):
     i = low
     j = mid + 1
     ltemp = []
@@ -18,7 +18,7 @@ def merge(li,low,mid,high):
     while j <= high:
         ltemp.append(li[j])
         j += 1
-    li[low:high+1] = ltemp
+    li[low:high + 1] = ltemp
 
 
 def merge_sort(li):
@@ -45,8 +45,7 @@ def merge_sort(li):
         max_size <<= 1
 
 
-li = [2,4,6,8,1,3,5,7,12,32,1,-1]
+li = [2, 4, 6, 8, 1, 3, 5, 7, 12, 32, 1, -1]
 
 merge_sort(li)
 print(li)
-

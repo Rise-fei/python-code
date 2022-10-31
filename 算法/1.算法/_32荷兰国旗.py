@@ -31,6 +31,25 @@ class Solution:
                 left += 1
         return li
 
+    def partition3(self, li):
+        """分3个区域，   <  ==  > """
+        base = li[-1]
+        left = -1
+        right = len(li)
+
+        i = 0
+        while i != right:
+            print(li)
+            if li[i] < base:
+                li[i], li[left+1] = li[left+1], li[i]
+                left += 1
+                i += 1
+            elif li[i] > base:
+                li[i], li[right-1] = li[right - 1], li[i]
+                right -= 1
+            else:
+                i += 1
+
 
 li = [3, 5, 6, 7, 4, 13, 2, 8, 7, 6]
 s = Solution()
@@ -38,4 +57,6 @@ s = Solution()
 # print(ret)
 # ret2 = s.partition2(li)
 # print(ret2)
+s.partition3(li)
+print(li)
 print("*" * 20)
