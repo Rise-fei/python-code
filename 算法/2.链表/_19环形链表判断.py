@@ -41,3 +41,34 @@ def solu2(head):
 
 ret = solu2(node1)
 print(ret)
+
+
+"""
+判断是否是环形链表，并返回第一个入环节点
+基于解法1，可以实现；返回T时一并返回node
+基于解法2:
+    基于快慢指针；先走到快慢指针重合的时候，表明链表有环；
+    fast指针指向头结点 和 slow 一起以步长1继续走，当走到重合的时候，就是入环节点
+"""
+
+
+def solu3(head):
+    if head is None or head.next is None:
+        return False, None
+    slow = head.next
+    quick = head.next.next
+    while slow != quick:
+        if quick is None or quick.next is None:
+            return False
+        slow = slow.next
+        quick = quick.next.next
+    quick = head
+    while slow != quick:
+        slow = slow.next
+        quick = quick.next
+
+    return True, quick
+
+
+ret, node = solu3(node1)
+print(ret, node.val)

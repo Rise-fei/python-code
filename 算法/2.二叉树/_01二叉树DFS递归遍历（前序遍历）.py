@@ -25,6 +25,7 @@ node3 = TreeNode(8,node5,node8)
 node2 = TreeNode(4,node4,None)
 node1 = TreeNode(5,node2,node3)
 
+
 # 深度遍历  递归遍历
 def travel(root):
     if root is None:
@@ -36,21 +37,5 @@ def travel(root):
     if root.right:
         travel(root.right)
 
+
 travel(node1)
-
-# 深度遍历  迭代遍历（栈）
-def travel2(root):
-    if root is None:
-        return
-    stack = []
-    stack.append(root)
-
-    while stack:
-        root = stack.pop()
-        print(root.val)
-        if root.right:
-            stack.append(root.right)
-        if root.left:
-            stack.append(root.left)
-
-# travel2(node1)

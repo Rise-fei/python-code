@@ -14,6 +14,7 @@ node1 = TreeNode(1,node2,node3)
 
 # 深度遍历  迭代遍历（栈）
 def travel2(root):
+    """头左右 先序遍历；  压入栈的时候，先压右，再压左"""
     if root is None:
         return
     stack = []
