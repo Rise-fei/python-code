@@ -15,5 +15,15 @@ def bubble_sort(l):
             return
 
 
+def bubble_sort2(l):
+    length = len(l)
+    for i in range(length):
+        for j in range(length-1-i):
+            if l[j] > l[j+1]:
+                l[j], l[j + 1] = l[j + 1], l[j]
+
+
+# bubble_sort2(li)
+# print(li)
 bubble_sort(li)
 print(li)
