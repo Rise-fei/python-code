@@ -1,5 +1,5 @@
 """
-输入链表头结点，奇数长度返回中点，偶数长度返回上中点
+输入链表头结点，奇数长度返回中点，偶数长度返回上中点       1 2 3 4      - -2
 输入链表头结点，奇数长度返回中点，偶数长度返回下中点
 输入链表头结点，奇数长度返回中点前一个，偶数长度返回上中点前一个
 输入链表头结点，奇数长度返回中点前一个，偶数长度返回下中点前一个
@@ -16,6 +16,8 @@ print(head)
 
 def func1(head: ListNode):
     """输入链表头结点，奇数长度返回中点，偶数长度返回上中点"""
+    # 12345     3
+    # 1234      2
     if not head or not head.next or not head.next.next:
         return head
 
@@ -31,6 +33,8 @@ def func1(head: ListNode):
 
 def func2(head: ListNode):
     """输入链表头结点，奇数长度返回中点，偶数长度返回下中点"""
+    # 12345     3
+    # 1234      3
     if not head or not head.next:
         return head
     if not head.next.next:
@@ -51,6 +55,8 @@ def func2(head: ListNode):
 
 def func3(head: ListNode):
     """输入链表头结点，奇数长度返回中点前一个，偶数长度返回上中点前一个"""
+    # 12345     2
+    # 1234      1
     if not head or not head.next or not head.next.next:
         return head
 

@@ -1,7 +1,8 @@
 # 归并排序,python内置排序使用
 # 算法复杂度 nlogn
 
-def merge(li,low,mid,high):
+
+def merge(li, low, mid, high):
     i = low
     j = mid + 1
     ltemp = []
@@ -18,10 +19,10 @@ def merge(li,low,mid,high):
     while j <= high:
         ltemp.append(li[j])
         j += 1
-    li[low:high+1] = ltemp
+    li[low:high + 1] = ltemp
 
 
-def merge_sort(li,low,high):
+def merge_sort(li, low, high):
     if low < high:
         mid = (low + high) // 2
         # 归并排序 左边
@@ -31,12 +32,9 @@ def merge_sort(li,low,high):
         # 合并排序
         merge(li, low, mid, high)
 
-li = [2,4,6,8,1,3,5,7]
+
+li = [2, 4, 6, 8, 1, 3, 5, 7]
 # merge(li,0,3,7)
 
-merge_sort(li,0,7)
+merge_sort(li, 0, 7)
 print(li)
-
-import calendar
-s = calendar.Calendar()
-print(s)

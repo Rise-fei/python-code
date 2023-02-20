@@ -20,6 +20,16 @@ def travel(root, queue):
 
 
 # 二叉树的中序 序列化
+# todo 此方法有歧义 二叉树没有中序序列化
+"""
+    2
+  /
+1
+上下两种的中序都是   # 1 # 2 #
+    1   
+      \
+         2
+"""
 def travel2(root, queue):
     if root is None:
         queue.put("#")
